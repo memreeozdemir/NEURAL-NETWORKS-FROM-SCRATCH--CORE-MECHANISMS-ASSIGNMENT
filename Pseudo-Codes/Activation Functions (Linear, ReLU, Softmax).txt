@@ -1,0 +1,40 @@
+#Linear
+
+
+FOR each value IN inputs:
+    APPEND value TO outputs
+
+
+#ReLU (Rectified Linear Unit)
+
+inputs = [1.0, -5.0, 3.5, 0.0]
+outputs = []
+
+FOR each value IN inputs:
+    IF value > 0:
+        APPEND value TO outputs
+    ELSE:
+        APPEND 0 TO outputs
+
+PRINT outputs
+EXPECTED: [1.0, 0, 3.5, 0.0]
+
+
+#Softmax
+
+
+inputs = [3.0, 1.0, 0.5]
+E = 2.718
+
+exp_values = []
+
+FOR each value IN inputs:
+    APPEND (E ^ value) TO exp_values
+
+normalization_base = SUM(exp_values)
+
+probabilities = []
+FOR each exp_value IN exp_values:
+    APPEND (exp_value / normalization_base) TO probabilities
+
+PRINT probabilities
